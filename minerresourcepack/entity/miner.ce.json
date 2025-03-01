@@ -1,0 +1,31 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "sloththe:miner",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/minertexture"
+            },
+            "geometry": {
+                "default":"geometry.miner_looks"
+            },
+            "scripts": {
+                "animate": ["walk_controller"]
+            },
+            "animations": {
+                "walk_controller": "controller.animation.miner.walk",
+                "idle": "animation.miner_looks.idle",
+                "walk": "animation.miner_looks.walk",
+                "hammerwalk":"animation.miner_looks.walk2"
+            },
+            "spawn_egg": {
+                "base_color": "#FFFFFF",
+                "overlay_color": "#000000"
+            },
+            "render_controllers": ["controller.render.miner"]
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.miner_looks",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-5, 13, -2], "size": [10, 15, 5], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "head",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-3, 28, -4], "size": [6, 7, 5], "uv": [24, 38]}
+					]
+				},
+				{
+					"name": "legone",
+					"pivot": [2.5, 12.5, 0.5],
+					"cubes": [
+						{"origin": [1, 0, -1], "size": [3, 13, 3], "uv": [24, 50]}
+					]
+				},
+				{
+					"name": "legtwo",
+					"pivot": [-2.5, 12.5, 0.5],
+					"cubes": [
+						{"origin": [-4, 0, -1], "size": [3, 13, 3], "uv": [50, 0]}
+					]
+				},
+				{
+					"name": "leftarm2",
+					"pivot": [6.25, 26.75, 0.375],
+					"cubes": [
+						{"origin": [4, 25, -3], "size": [5, 4, 7], "uv": [30, 27]},
+						{"origin": [5, 11, -1], "size": [3, 14, 3], "uv": [12, 46]},
+						{"origin": [5, 12, -9], "size": [2, 2, 13], "uv": [0, 20]},
+						{"origin": [4, 8, -12], "size": [4, 10, 6], "uv": [30, 0]}
+					]
+				},
+				{
+					"name": "rightarm",
+					"pivot": [-6.5, 25.5, 0.5],
+					"cubes": [
+						{"origin": [-8, 11, -1], "size": [3, 14, 3], "uv": [46, 38]},
+						{"origin": [-9, 25, -3], "size": [5, 4, 7], "uv": [0, 35]}
+					]
+				}
+			]
+		}
+	]
+}

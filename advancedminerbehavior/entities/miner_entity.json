@@ -1,0 +1,113 @@
+{
+    "format_version": "1.19.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "sloththe:miner",
+            "is_summonable": true,
+            "is_spawnable": true
+        },
+        "component_groups":{
+            "sloththe:miner_eating":{
+                "minecraft:behavior.eat_block":{
+                    "eat_and_replace_block_pairs":[
+                        {"eat_block":"minecraft:stone","replace_block":"minecraft:air"}
+                    ],
+                    "priority": 1,
+                    "time_until_eat": 1,
+                    "on_eat":{
+                        "event":"sloththe:stop_eating",
+                        "target":"self"
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "miner"
+                ]
+            },
+            "minecraft:health": {
+                "value": 20,
+                "max": 20
+            },
+            "minecraft:attack": {
+                "damage": 3
+            },
+            "minecraft:movement": {
+                "value": 0.2
+            },
+            "minecraft:collision_box": {
+                "width": 0.8,
+                "height": 1.8
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/entities/miner.json"
+            },
+            "minecraft:physics": {},
+            "minecraft:jump.static": {},
+            "minecraft:movement.basic": {},
+            "minecraft:navigation.walk": {
+                "can_walk": true,
+                "avoid_sun": true,
+                "can_pass_doors": true,
+                "can_open_doors": true
+            },
+            "minecraft:inventory": {
+                "inventory_size": 27,
+                "container_type": "minecart_chest",
+                "can_be_siphoned_from": true,
+                "can_be_private": false
+            },
+            "minecraft:interact": {
+                "interactions": [
+                    {
+                        "on_interact": {
+                            "open_inventory": true
+                        }
+                    }
+                ]
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 6,
+                "speed_multiplier": 1
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 7
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 6,
+                "probability": 0.02
+            },
+            "minecraft:behavior.move_to_block":{
+                "goal_radius": 0.5,
+                "target_blocks": ["minecraft:stone"],
+                "search_height": 4,
+                "search_range": 16,
+                "start_chance": 0.8,
+                "target_selection_method": "nearest",
+                "priority": 4,
+                "tick_interval": 1,
+                "stay_duration": 4,
+                "on_reach":
+                    {
+                        "event":"sloththe:start_eating",
+                        "target":"self"
+                    }
+            }
+        },
+        "events":{
+                "sloththe:start_eating":{
+                    "add":{
+                        "component_groups":["sloththe:miner_eating"]
+                    }
+                },
+                "sloththe:stop_eating":{
+                    "remove":{
+                        "component_groups":["sloththe:miner_eating"]
+                    }
+                }
+            }
+    }
+}

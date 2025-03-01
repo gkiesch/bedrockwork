@@ -1,0 +1,17 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "minertexture",
+        "description": "This will tell you what the miner looks like, eventually",
+        "uuid": "36f7a72f-994f-43ff-97ea-8c46fda72936",
+        "version": [1, 0, 0],
+        "min_engine_version": [1, 16, 0]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "ba818181-6558-4413-8158-0d7358657aa5",
+            "version": [1, 0, 0]
+        }
+    ]
+}
