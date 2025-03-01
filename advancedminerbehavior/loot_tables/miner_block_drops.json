@@ -1,0 +1,76 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:cobblestone",
+                    "weight": 1,
+                    "conditions": [
+                        {
+                            "condition": "minecraft:match_tool",
+                            "predicate": {
+                                "items": [
+                                    "minecraft:iron_pickaxe",
+                                    "minecraft:diamond_pickaxe"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:coal",
+                    "weight": 1,
+                    "conditions": [
+                        {
+                            "condition": "minecraft:survives_explosion"
+                        },
+                        {
+                            "condition": "minecraft:match_tool",
+                            "predicate": {
+                                "items": [
+                                    "minecraft:wooden_pickaxe",
+                                    "minecraft:stone_pickaxe",
+                                    "minecraft:iron_pickaxe",
+                                    "minecraft:diamond_pickaxe"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:raw_iron",
+                    "weight": 1,
+                    "conditions": [
+                        {
+                            "condition": "minecraft:survives_explosion"
+                        },
+                        {
+                            "condition": "minecraft:match_tool",
+                            "predicate": {
+                                "items": [
+                                    "minecraft:stone_pickaxe",
+                                    "minecraft:iron_pickaxe",
+                                    "minecraft:diamond_pickaxe"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
