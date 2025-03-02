@@ -19,7 +19,9 @@
                 "walk_controller": "controller.animation.miner.walk",
                 "idle": "animation.miner_looks.idle",
                 "walk": "animation.miner_looks.walk",
-                "hammerwalk":"animation.miner_looks.walk2"
+                "hammerwalk":"animation.miner_looks.walk2",
+                "mining_swing":"animation.miner_looks.mining_swing",
+                "triumph":"animation.miner_looks.triumph"
             },
             "spawn_egg": {
                 "base_color": "#FFFFFF",
