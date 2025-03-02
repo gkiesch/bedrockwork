@@ -9,6 +9,9 @@
                     "transitions": [
                         {
                             "moving": "query.modified_move_speed > 0.1"
+                        },
+                        {
+                            "mining": "query.is_digging"
                         }
                     ]
                 },
@@ -17,6 +20,12 @@
                     "transitions": [{
                         "standing": "query.modified_move_speed <= 0.1"
                     }]
+                },
+                "mining": {
+                    "animations": ["mining_swing"],
+                    "transitions": [
+                        {"standing":"!query.is_digging"}
+                    ]
                 }
             }
         }

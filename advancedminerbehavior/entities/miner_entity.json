@@ -2,22 +2,17 @@
     "format_version": "1.19.0",
     "minecraft:entity": {
         "description": {
-            "identifier": "sloththe:miner",
+            "identifier": "sloth:miner",
             "is_summonable": true,
             "is_spawnable": true
         },
         "component_groups":{
-            "sloththe:miner_eating":{
-                "minecraft:behavior.eat_block":{
-                    "eat_and_replace_block_pairs":[
-                        {"eat_block":"minecraft:stone","replace_block":"minecraft:air"}
-                    ],
-                    "priority": 1,
-                    "time_until_eat": 1,
-                    "on_eat":{
-                        "event":"sloththe:stop_eating",
-                        "target":"self"
-                    }
+            "sloth:digs":{
+                "minecraft:behavior.dig":{
+                    "priority":1,
+                    "duration":5,
+                    "idle_time": 5,
+                    "digs_in_daylight":true
                 }
             }
         },
@@ -81,7 +76,7 @@
                 "probability": 0.02
             },
             "minecraft:behavior.move_to_block":{
-                "goal_radius": 0.5,
+                "goal_radius": 2,
                 "target_blocks": ["minecraft:stone"],
                 "search_height": 4,
                 "search_range": 16,
@@ -89,23 +84,18 @@
                 "target_selection_method": "nearest",
                 "priority": 4,
                 "tick_interval": 1,
-                "stay_duration": 4,
-                "on_reach":
+                "stay_duration": 2,
+                "on_stay_completed":
                     {
-                        "event":"sloththe:start_eating",
+                        "event":"start_mining",
                         "target":"self"
                     }
             }
         },
         "events":{
-                "sloththe:start_eating":{
+                "start_mining":{
                     "add":{
-                        "component_groups":["sloththe:miner_eating"]
-                    }
-                },
-                "sloththe:stop_eating":{
-                    "remove":{
-                        "component_groups":["sloththe:miner_eating"]
+                        "component_groups":["sloth:digs"]
                     }
                 }
             }
