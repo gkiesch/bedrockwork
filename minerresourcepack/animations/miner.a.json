@@ -75,6 +75,7 @@
 		},
 		"animation.miner_looks.mining_swing": {
 			"animation_length": 1.5,
+			"loop":true,
 			"bones": {
 				"head": {
 					"rotation": {
