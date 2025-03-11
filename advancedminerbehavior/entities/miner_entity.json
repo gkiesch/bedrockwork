@@ -80,7 +80,7 @@
                 "search_range": 16,
                 "start_chance": 0.8,
                 "target_selection_method": "nearest",
-                "priority": 1,
+                "priority": 0,
                 "tick_interval": 1
             },
             "minecraft:break_blocks":{
@@ -94,7 +94,69 @@
                 ]
             },
             "minecraft:persistent":{},
-            "minecraft:pushable":{}
+            "minecraft:pushable":{},
+            "minecraft:behavior.share_items":{
+                "priority":1,
+                "max_dist":3,
+                "goal_radius":2,
+                "speed_multiplier":0.5,
+                "entity_types":[
+                    {
+                        "filters":{
+                            "test":"is_family",
+                            "subject":"other",
+                            "value":"player"
+                        }
+                    }
+                ]
+            },
+            "minecraft:shareables":{
+                "items":[
+                    {
+                        "item":"minecraft:coal",
+                        "want_amount":1,
+                        "surplus_amount":2,
+                        "stored_in_inventory":true,
+                        "priority":0
+                    },
+                    {
+                        "item":"minecraft:cobblestone",
+                        "want_amount":1,
+                        "surplus_amount":2,
+                        "stored_in_inventory":true,
+                        "priority":1
+                    },
+                    {
+                        "item":"minecraft:dirt",
+                        "want_amount":1,
+                        "surplus_amount":2,
+                        "priority":2,
+                        "stored_in_inventory":false
+                    }
+                ]
+            },
+            "minecraft:inventory":{
+                "inventory_size":70,
+                "can_be_siphoned_from":true
+            },
+            "minecraft:behavior.pickup_items":{
+                "priority":2,
+                "max_dist":5,
+                "goal_radius":2,
+                "can_pickup_to_hand_or_equipment":false,
+                "search_height":3
+            },
+            "minecraft:tameable":{
+                "probability":1,
+                "tame_items":["iron_pickaxe"]
+            },
+            "minecraft:behavior.go_and_give_items_to_owner":{
+                "priority":4,
+                "reach_mob_distance":3,
+                "run_speed":1,
+                "throw_force":0.2
+            }
+            
         }
     }
 }
