@@ -95,6 +95,28 @@
 					}
 				}
 			}
+		},
+		"animation.miner_looks.sit_down": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 0.25,
+			"bones": {
+				"body": {
+					"position": [0, -13, 0]
+				},
+				"head": {
+					"position": [0, -22, 0]
+				},
+				"leftarm2": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-90, 0, 0]
+					},
+					"position": [0, -16, 0]
+				},
+				"rightarm": {
+					"position": [0, -16, 0]
+				}
+			}
 		}
 	}
 }

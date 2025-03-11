@@ -36,6 +36,23 @@
                     }]
                 }
             }
+        },
+        "controller.animation.miner.sitting":{
+            "initial_state": "standing",
+            "states":{
+                "standing":{
+                    "animations": ["idle"],
+                    "transitions": [{
+                        "sitting":"query.is_sitting"
+                    }]
+                },
+                "sitting":{
+                    "animations":["sit_down"],
+                    "transitions":[{
+                        "standing":"!query.is_sitting"
+                    }]
+                }
+            }
         }
     }
 }

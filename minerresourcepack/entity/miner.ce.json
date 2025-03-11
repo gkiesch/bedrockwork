@@ -22,7 +22,8 @@
                 "walk": "animation.miner_looks.walk",
                 "hammerwalk":"animation.miner_looks.walk2",
                 "mining_swing":"animation.miner_looks.mining_swing",
-                "triumph":"animation.miner_looks.triumph"
+                "triumph":"animation.miner_looks.triumph",
+                "sit_down":"animation.miner_looks.sit_down"
             },
             "spawn_egg": {
                 "base_color": "#FFFFFF",
