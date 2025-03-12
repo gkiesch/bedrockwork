@@ -6,7 +6,22 @@
             "is_summonable": true,
             "is_spawnable": true
         },
-        "component_groups": {},
+        "component_groups": {
+            "tame_attributes":{
+                "minecraft:is_tamed":{},
+                "minecraft:sittable":{},
+                "minecraft:behavior.stay_while_sitting":{
+                    "priority":0
+                }
+            }
+        },
+        "events":{
+            "tamed":{
+                "add":{
+                    "component_groups":["tame_attributes"]
+                }
+            }
+        },
         "components": {
             "minecraft:type_family": {
                 "family": [
@@ -148,7 +163,11 @@
             },
             "minecraft:tameable":{
                 "probability":1,
-                "tame_items":["iron_pickaxe"]
+                "tame_items":["iron_pickaxe"],
+                "tame_event":{
+                    "event":"tamed",
+                    "target":"self"
+                }
             },
             "minecraft:behavior.go_and_give_items_to_owner":{
                 "priority":4,
@@ -156,7 +175,6 @@
                 "run_speed":1,
                 "throw_force":0.2
             }
-            
         }
     }
 }

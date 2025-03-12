@@ -13,11 +13,12 @@
                 "default":"geometry.miner_looks"
             },
             "scripts": {
-                "animate": ["walk_controller","mine_controller"]
+                "animate": ["walk_controller","mine_controller","sit_controller"]
             },
             "animations": {
                 "walk_controller": "controller.animation.miner.walk",
                 "mine_controller": "controller.animation.miner.mine",
+                "sit_controller":"controller.animation.miner.sitting",
                 "idle": "animation.miner_looks.idle",
                 "walk": "animation.miner_looks.walk",
                 "hammerwalk":"animation.miner_looks.walk2",
