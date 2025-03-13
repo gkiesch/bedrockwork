@@ -1,2 +1,3 @@
 entity.grant:miner.name=Miner
 item.spawn_egg.entity.grant:miner.name=Miner
+item.miner:dark_conduit=Dark Conduit
