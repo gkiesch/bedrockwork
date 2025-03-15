@@ -50,9 +50,15 @@
             "minecraft:movement.basic": {},
             "minecraft:navigation.walk": {
                 "can_walk": true,
+                "can_swim":true,
                 "avoid_sun": false,
                 "can_pass_doors": true,
-                "can_open_doors": true
+                "can_open_doors": true,
+                "avoid_water":true,
+                "avoid_damage_blocks":true,
+                "avoid_portals":true,
+                "can_path_over_water":true,
+                "can_jump":true
             },
             "minecraft:is_chested":{},
             "minecraft:behavior.random_stroll": {
@@ -89,13 +95,14 @@
             "minecraft:behavior.move_to_block": {
                 "goal_radius": 2,
                 "target_blocks": [
+                    "minecraft:lit_redstone_lamp",
                     "minecraft:coal_ore"
                 ],
-                "search_height": 4,
-                "search_range": 16,
+                "search_height": 25,
+                "search_range": 50,
                 "start_chance": 0.8,
                 "target_selection_method": "nearest",
-                "priority": 1,
+                "priority": 2,
                 "tick_interval": 1
             },
             "minecraft:break_blocks":{
@@ -182,6 +189,9 @@
                 "priority":1,
                 "items":["coal"],
                 "within_radius":40
+            },
+            "minecraft:behavior.float":{
+                "priority":0
             }
         }
     }
