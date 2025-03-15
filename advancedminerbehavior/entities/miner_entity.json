@@ -9,16 +9,69 @@
         "component_groups": {
             "tame_attributes":{
                 "minecraft:is_tamed":{},
-                "minecraft:sittable":{},
+                "minecraft:sittable":{
+                    "sit_event":{
+                        "event":"start_drill",
+                        "target":"self"
+                    },
+                    "stand_event":{
+                        "event":"stop_drill",
+                        "target":"self"
+                    }
+                },
                 "minecraft:behavior.stay_while_sitting":{
-                    "priority":0
+                    "priority":1
+                }
+            },
+            "drill_attributes":{
+                "minecraft:behavior.eat_block": {
+                    "priority": 0,
+                    "success_chance": "1.0",
+                    "time_until_eat": 0,
+                    "eat_and_replace_block_pairs": [
+                        {
+                            "eat_block": "stone",
+                            "replace_block": "air"
+                        },
+                        {
+                            "eat_block":"grass",
+                            "replace_block":"air"
+                        },
+                        {
+                            "eat_block":"dirt",
+                            "replace_block":"air"
+                        },
+                        {
+                            "eat_block":"diorite",
+                            "replace_block":"air"
+                        },
+                        {
+                            "eat_block":"granite",
+                            "replace_block":"air"
+                        },
+                        {
+                            "eat_block":"andesite",
+                            "replace_block":"air"
+                        }
+                    ]
                 }
             }
+            
         },
         "events":{
             "tamed":{
                 "add":{
                     "component_groups":["tame_attributes"]
+                }
+            },
+            "start_drill":{
+                "add":{
+                    "component_groups":["drill_attributes"]
+                }
+            },
+            "stop_drill":{
+                "remove":{
+                    "component_groups":["drill_attributes"]
                 }
             }
         },
@@ -39,7 +92,7 @@
                 "value": 0.2
             },
             "minecraft:collision_box": {
-                "width": 0.8,
+                "width": 0.5,
                 "height": 2.8
             },
             "minecraft:loot": {
@@ -62,35 +115,18 @@
             },
             "minecraft:is_chested":{},
             "minecraft:behavior.random_stroll": {
-                "priority": 3,
-                "speed_multiplier": 1
+                "priority": 4,
+                "speed_multiplier": 1,
+                "xz_dist":30,
+                "interval":60
             },
             "minecraft:behavior.random_look_around": {
-                "priority": 5
+                "priority": 7
             },
             "minecraft:behavior.look_at_player": {
-                "priority": 5,
+                "priority": 7,
                 "look_distance": 6,
                 "probability": 0.02
-            },
-            "minecraft:behavior.eat_block": {
-                    "priority": 4,
-                    "success_chance": "1.0",
-                    "time_until_eat": 0,
-                    "eat_and_replace_block_pairs": [
-                        {
-                            "eat_block": "stone",
-                            "replace_block": "air"
-                        },
-                        {
-                            "eat_block":"grass",
-                            "replace_block":"air"
-                        },
-                        {
-                            "eat_block":"dirt",
-                            "replace_block":"air"
-                        }
-                    ]
             },
             "minecraft:behavior.move_to_block": {
                 "goal_radius": 2,
@@ -102,7 +138,7 @@
                 "search_range": 50,
                 "start_chance": 0.8,
                 "target_selection_method": "nearest",
-                "priority": 2,
+                "priority": 3,
                 "tick_interval": 1
             },
             "minecraft:break_blocks":{
@@ -114,7 +150,8 @@
                     "diorite",
                     "andesite",
                     "gravel",
-                    "sand"
+                    "sand",
+                    "deepslate"
                 ]
             },
             "minecraft:persistent":{},
@@ -164,7 +201,7 @@
                 "can_be_siphoned_from":true
             },
             "minecraft:behavior.pickup_items":{
-                "priority":2,
+                "priority":3,
                 "max_dist":5,
                 "goal_radius":2,
                 "can_pickup_to_hand_or_equipment":false,
@@ -179,14 +216,14 @@
                 }
             },
             "minecraft:behavior.go_and_give_items_to_owner":{
-                "priority":4,
+                "priority":5,
                 "reach_mob_distance":3,
                 "run_speed":1,
                 "throw_force":0.2
             },
             "minecraft:behavior.tempt":{
                 "can_tempt_vertically":true,
-                "priority":1,
+                "priority":2,
                 "items":["coal"],
                 "within_radius":40
             },
@@ -195,4 +232,4 @@
             }
         }
     }
-}
+}    
