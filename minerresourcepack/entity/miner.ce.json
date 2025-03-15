@@ -7,24 +7,20 @@
                 "default": "entity_alphatest"
             },
             "textures": {
-                "default": "textures/entity/minertexture"
+                "default": "textures/entity/darkrocky"
             },
             "geometry": {
-                "default":"geometry.miner_looks"
+                "default":"geometry.darkrocky"
             },
             "scripts": {
-                "animate": ["walk_controller","mine_controller","sit_controller"]
+                "animate": ["walk_controller","sit_controller"]
             },
             "animations": {
-                "walk_controller": "controller.animation.miner.walk",
-                "mine_controller": "controller.animation.miner.mine",
-                "sit_controller":"controller.animation.miner.sitting",
-                "idle": "animation.miner_looks.idle",
-                "walk": "animation.miner_looks.walk",
-                "hammerwalk":"animation.miner_looks.walk2",
-                "mining_swing":"animation.miner_looks.mining_swing",
-                "triumph":"animation.miner_looks.triumph",
-                "sit_down":"animation.miner_looks.sit_down"
+                "walk_controller": "controller.animation.darkrocky.walk",
+                "sit_controller":"controller.animation.darkrocky.sit",
+                "idle": "animation.darkrocky.idle",
+                "walking": "animation.darkrocky.walk",
+                "sit":"animation.darkrocky.sit"
             },
             "spawn_egg": {
                 "base_color": "#FFFFFF",

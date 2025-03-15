@@ -1,0 +1,21 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.darkrocky.sit": {
+			"states": {
+				"default": {
+					"animations": ["idle"],
+					"transitions": [
+						{"active": "query.is_sitting"}
+					]
+				},
+				"active": {
+					"animations": ["sit"],
+					"transitions": [
+						{"default": "!query.is_sitting"}
+					]
+				}
+			}
+		}
+	}
+}

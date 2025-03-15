@@ -1,58 +1,40 @@
 {
     "format_version": "1.10.0",
     "animation_controllers": {
-        "controller.animation.miner.walk": {
-            "initial_state": "standing",
-            "states": {
-                "standing": {
-                    "animations": ["idle"],
-                    "transitions": [
-                        {
-                            "moving": "query.modified_move_speed > 0.1"
-                        }
-                    ]
-                },
-                "moving": {
-                    "animations": ["walk", "hammerwalk"],
-                    "transitions": [{
-                        "standing": "query.modified_move_speed <= 0.1"
-                    }]
-                }
-            }
-        },
-        "controller.animation.miner.mine":{
-            "initial_state": "standing",
-            "states":{
-                "standing":{
-                    "animations":["idle"],
-                    "transitions":[{
-                        "mining": "query.is_digging"
-                    }]
-                },
-                "mining":{
-                    "animations":["mining_swing"],
-                    "transitions":[{
-                        "standing": "!query.is_digging"
-                    }]
-                }
-            }
-        },
-        "controller.animation.miner.sitting":{
-            "initial_state": "standing",
-            "states":{
-                "standing":{
-                    "animations": ["idle"],
-                    "transitions": [{
-                        "sitting":"query.is_sitting"
-                    }]
-                },
-                "sitting":{
-                    "animations":["sit_down"],
-                    "transitions":[{
-                        "standing":"!query.is_sitting"
-                    }]
-                }
-            }
-        }
+        "controller.animation.darkrocky.walk": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations":["idle"],
+					"transitions": [
+						{"walking": "q.modified_move_speed > 0.1"}
+					],
+					"blend_transition": 0.2
+				},
+				"walking": {
+					"animations":["walking"],
+					"transitions": [
+						{"idle": "q.modified_move_speed <= 0.1"}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		},
+        "controller.animation.darkrocky.sit": {
+			"states": {
+				"default": {
+					"animations": ["idle"],
+					"transitions": [
+						{"active": "query.is_sitting"}
+					]
+				},
+				"active": {
+					"animations": ["sit"],
+					"transitions": [
+						{"default": "!query.is_sitting"}
+					]
+				}
+			}
+		}
     }
 }

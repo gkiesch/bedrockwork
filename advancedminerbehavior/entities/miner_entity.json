@@ -95,7 +95,7 @@
                 "search_range": 16,
                 "start_chance": 0.8,
                 "target_selection_method": "nearest",
-                "priority": 0,
+                "priority": 1,
                 "tick_interval": 1
             },
             "minecraft:break_blocks":{

@@ -75,9 +75,6 @@
 					}
 				}
 			}
-		},
-		"animation.darkrocky.idle": {
-			"loop": true
 		}
 	}
 }
