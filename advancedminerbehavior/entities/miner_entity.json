@@ -56,7 +56,7 @@
             },
             "minecraft:is_chested":{},
             "minecraft:behavior.random_stroll": {
-                "priority": 2,
+                "priority": 3,
                 "speed_multiplier": 1
             },
             "minecraft:behavior.random_look_around": {
@@ -68,7 +68,7 @@
                 "probability": 0.02
             },
             "minecraft:behavior.eat_block": {
-                    "priority": 3,
+                    "priority": 4,
                     "success_chance": "1.0",
                     "time_until_eat": 0,
                     "eat_and_replace_block_pairs": [
@@ -87,7 +87,7 @@
                     ]
             },
             "minecraft:behavior.move_to_block": {
-                "goal_radius": 1,
+                "goal_radius": 2,
                 "target_blocks": [
                     "minecraft:coal_ore"
                 ],
@@ -105,7 +105,9 @@
                     "grass",
                     "granite",
                     "diorite",
-                    "andesite"
+                    "andesite",
+                    "gravel",
+                    "sand"
                 ]
             },
             "minecraft:persistent":{},
@@ -174,6 +176,12 @@
                 "reach_mob_distance":3,
                 "run_speed":1,
                 "throw_force":0.2
+            },
+            "minecraft:behavior.tempt":{
+                "can_tempt_vertically":true,
+                "priority":1,
+                "items":["coal"],
+                "within_radius":40
             }
         }
     }
