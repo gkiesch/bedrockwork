@@ -1,0 +1,32 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "miner:gem_pet",
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "textures": {
+                "default": "textures/entity/golempet"
+            },
+            "geometry": {
+                "default":"geometry.gem_pet"
+            },
+            "scripts": {
+                "animate": ["walk_controller","sit_controller"]
+            },
+            "animations": {
+                "walk_controller": "controller.animation.gem_pet.walk_controller",
+                "sit_controller":"controller.animation.gem_pet.sit_controller",
+                "idle": "animation.gem_pet.idle",
+                "walking": "animation.gem_pet.walk",
+                "sit": "animation.gem_pet.sit"
+            },
+            "spawn_egg": {
+                "base_color": "#FFFFFF",
+                "overlay_color": "#000000"
+            },
+            "render_controllers":["controller.render.gem_pet"]
+        }
+    }
+}

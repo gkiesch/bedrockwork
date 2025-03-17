@@ -1,0 +1,40 @@
+{
+	"format_version": "1.19.0",
+	"animation_controllers": {
+		"controller.animation.gem_pet.sit_controller": {
+			"states": {
+				"default": {
+					"animations": ["idle"],
+					"transitions": [
+						{"active": "query.is_sitting"}
+					]
+				},
+				"active": {
+					"animations": ["sit"],
+					"transitions": [
+						{"default": "!query.is_sitting"}
+					]
+				}
+			}
+		},
+        "controller.animation.gem_pet.walk_controller": {
+			"initial_state": "idle",
+			"states": {
+				"idle": {
+					"animations": ["idle"],
+					"transitions": [
+						{"walking": "q.ground_speed > 0.2"}
+					],
+					"blend_transition": 0.2
+				},
+				"walking": {
+					"animations": ["walking"],
+					"transitions": [
+						{"idle": "q.ground_speed <= 0.2"}
+					],
+					"blend_transition": 0.2
+				}
+			}
+		}
+	}
+}

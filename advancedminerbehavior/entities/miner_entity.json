@@ -132,7 +132,8 @@
                 "goal_radius": 2,
                 "target_blocks": [
                     "minecraft:lit_redstone_lamp",
-                    "minecraft:coal_ore"
+                    "minecraft:coal_ore",
+                    "minecraft:iron_ore"
                 ],
                 "search_height": 4,
                 "search_range": 20,
