@@ -115,9 +115,9 @@
             },
             "minecraft:is_chested":{},
             "minecraft:behavior.random_stroll": {
-                "priority": 4,
+                "priority": 3,
                 "speed_multiplier": 1,
-                "xz_dist":30,
+                "xz_dist":18,
                 "interval":60
             },
             "minecraft:behavior.random_look_around": {
@@ -134,8 +134,8 @@
                     "minecraft:lit_redstone_lamp",
                     "minecraft:coal_ore"
                 ],
-                "search_height": 25,
-                "search_range": 50,
+                "search_height": 4,
+                "search_range": 20,
                 "start_chance": 0.8,
                 "target_selection_method": "nearest",
                 "priority": 3,
@@ -151,7 +151,8 @@
                     "andesite",
                     "gravel",
                     "sand",
-                    "deepslate"
+                    "deepslate",
+                    "clay"
                 ]
             },
             "minecraft:persistent":{},
@@ -193,6 +194,20 @@
                         "surplus_amount":2,
                         "priority":2,
                         "stored_in_inventory":false
+                    },
+                    {
+                        "item":"minecraft:flint",
+                        "want_amount":1,
+                        "surplus_amount":2,
+                        "stored_in_inventory":true,
+                        "priority":1
+                    },
+                    {
+                        "item":"minecraft:gravel",
+                        "want_amount":1,
+                        "surplus_amount":2,
+                        "stored_in_inventory":true,
+                        "priority":1
                     }
                 ]
             },
@@ -229,7 +244,8 @@
             },
             "minecraft:behavior.float":{
                 "priority":0
-            }
+            },
+            "minecraft:can_climb":{}
         }
     }
 }    
