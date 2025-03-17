@@ -12,7 +12,16 @@
                 "minecraft:sittable":{},
                 "minecraft:behavior.stay_while_sitting":{
                     "priority":1
+                },
+                "minecraft:behavior.follow_owner": {
+                    "priority": 4,
+                    "speed_multiplier": 1.5,
+                    "start_distance": 8,
+                    "stop_distance": 3,
+                    "can_teleport": false,
+                    "max_distance": 60
                 }
+
             }
             
         },
